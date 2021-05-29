@@ -1,0 +1,54 @@
+package eu.happycoders.binary_tree.example;
+
+import eu.happycoders.binary_tree.BinaryTree;
+import eu.happycoders.binary_tree.Node;
+import eu.happycoders.binary_tree.NodeVisitor;
+import eu.happycoders.binary_tree.SimpleBinaryTree;
+import eu.happycoders.binary_tree.SimpleBinaryTree.Side;
+import eu.happycoders.binary_tree.TraversalDepthFirstIterative;
+
+public class Example2 {
+
+  private static final NodeVisitor visitor = node -> System.out.print(node.getValue() + " ");
+
+  public static void main(String[] args) {
+    SimpleBinaryTree tree = createSampleTree();
+    traverseTreeInVariousWays(tree);
+  }
+
+  private static SimpleBinaryTree createSampleTree() {
+    SimpleBinaryTree tree = new SimpleBinaryTree();
+
+    Node root = tree.insertRoot(3);
+
+    // Left sub-tree of root
+    Node node1 = tree.insertNode(1, root, Side.LEFT);
+    Node node13 = tree.insertNode(13, node1, Side.LEFT);
+
+    // Right sub-tree of root
+    Node node10 = tree.insertNode(10, root, Side.RIGHT);
+    Node node11 = tree.insertNode(11, node10, Side.LEFT);
+    Node node16 = tree.insertNode(16, node10, Side.RIGHT);
+    Node node15 = tree.insertNode(15, node16, Side.LEFT);
+    Node node2 = tree.insertNode(2, node16, Side.RIGHT);
+
+    return tree;
+  }
+
+  private static void traverseTreeInVariousWays(BinaryTree tree) {
+    System.out.println("Pre-order (recursive):");
+    tree.traversePreOrder(visitor);
+
+    System.out.println("\n\nPost-order (recursive):");
+    tree.traversePostOrder(visitor);
+
+    System.out.println("\n\nIn-order (recursive):");
+    tree.traverseInOrder(visitor);
+
+    System.out.println("\n\nReverse in-order (recursive):");
+    tree.traverseReverseInOrder(visitor);
+
+    System.out.println("\n\nLevel-order:");
+    tree.traverseLevelOrder(visitor);
+  }
+}
