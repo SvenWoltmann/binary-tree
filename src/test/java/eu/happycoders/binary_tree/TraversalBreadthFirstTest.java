@@ -11,6 +11,6 @@ class TraversalBreadthFirstTest {
   void traverseLevelOrder_sampleTree_traversesTreeInLevelOrder() {
     TestNodeVisitor visitor = new TestNodeVisitor();
     TraversalBreadthFirst.traverseLevelOrder(TestTree.ROOT, visitor);
-    assertThat(visitor.getValues(), contains(TestTree.LEVEL_ORDER_VALUES));
+    assertThat(visitor.getDataList(), contains(TestTree.LEVEL_ORDER_VALUES));
   }
 }

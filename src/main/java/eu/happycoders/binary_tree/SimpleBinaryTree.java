@@ -148,9 +148,9 @@ public class SimpleBinaryTree extends BinaryTree {
     } else {
       throw new IllegalStateException(
           "Node "
-              + node.value
+              + node.data
               + " is neither a left nor a right child of its parent "
-              + node.parent.value);
+              + node.parent.data);
     }
 
     if (child != null) {

@@ -9,7 +9,7 @@ import eu.happycoders.binary_tree.TraversalDepthFirstIterative;
 
 public class Example1 {
 
-  private static final NodeVisitor visitor = node -> System.out.print(node.getValue() + " ");
+  private static final NodeVisitor visitor = node -> System.out.print(node.getData() + " ");
 
   public static void main(String[] args) {
     TreeWithNodesToDelete treeWithNodes = createSampleTree();

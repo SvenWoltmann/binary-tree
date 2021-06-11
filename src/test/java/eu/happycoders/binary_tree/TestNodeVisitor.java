@@ -1,20 +1,18 @@
 package eu.happycoders.binary_tree;
 
-import eu.happycoders.binary_tree.Node;
-import eu.happycoders.binary_tree.NodeVisitor;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestNodeVisitor implements NodeVisitor {
 
-  private List<Integer> values = new ArrayList<>();
+  private List<Integer> dataList = new ArrayList<>();
 
   @Override
   public void visit(Node node) {
-    values.add(node.value);
+    dataList.add(node.data);
   }
 
-  public List<Integer> getValues() {
-    return values;
+  public List<Integer> getDataList() {
+    return dataList;
   }
 }

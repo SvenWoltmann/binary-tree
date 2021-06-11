@@ -18,7 +18,7 @@ class SimpleBinaryTreeTest {
 
     assertThat(root, sameInstance(tree.getRoot()));
 
-    assertThat(root.value, is(3));
+    assertThat(root.data, is(3));
     assertThat(root.left, is(nullValue()));
     assertThat(root.right, is(nullValue()));
     assertThat(root.parent, is(nullValue()));
@@ -46,7 +46,7 @@ class SimpleBinaryTreeTest {
     assertThat(root.left, sameInstance(node));
     assertThat(root.right, is(nullValue()));
 
-    assertThat(node.value, is(1));
+    assertThat(node.data, is(1));
     assertThat(node.left, is(nullValue()));
     assertThat(node.right, is(nullValue()));
     assertThat(node.parent, sameInstance(root));
@@ -64,7 +64,7 @@ class SimpleBinaryTreeTest {
     assertThat(root.left, sameInstance(node));
     assertThat(root.right, sameInstance(node10));
 
-    assertThat(node.value, is(2));
+    assertThat(node.data, is(2));
     assertThat(node.left, sameInstance(node1));
     assertThat(node.right, is(nullValue()));
     assertThat(node.parent, sameInstance(root));
@@ -81,7 +81,7 @@ class SimpleBinaryTreeTest {
     assertThat(root.left, is(nullValue()));
     assertThat(root.right, sameInstance(node));
 
-    assertThat(node.value, is(10));
+    assertThat(node.data, is(10));
     assertThat(node.left, is(nullValue()));
     assertThat(node.right, is(nullValue()));
     assertThat(node.parent, sameInstance(root));
@@ -99,7 +99,7 @@ class SimpleBinaryTreeTest {
     assertThat(root.left, sameInstance(node1));
     assertThat(root.right, sameInstance(node));
 
-    assertThat(node.value, is(15));
+    assertThat(node.data, is(15));
     assertThat(node.left, is(nullValue()));
     assertThat(node.right, sameInstance(node10));
     assertThat(node.parent, sameInstance(root));

@@ -1,7 +1,5 @@
 package eu.happycoders.binary_tree;
 
-import eu.happycoders.binary_tree.Node;
-
 public class TestTree {
 
   static final Node ROOT;
