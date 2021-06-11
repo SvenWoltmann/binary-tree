@@ -5,7 +5,6 @@ import eu.happycoders.binary_tree.Node;
 import eu.happycoders.binary_tree.NodeVisitor;
 import eu.happycoders.binary_tree.SimpleBinaryTree;
 import eu.happycoders.binary_tree.SimpleBinaryTree.Side;
-import eu.happycoders.binary_tree.TraversalDepthFirstIterative;
 
 public class Example2 {
 
