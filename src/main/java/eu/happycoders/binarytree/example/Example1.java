@@ -1,11 +1,13 @@
 package eu.happycoders.binarytree.example;
 
 import eu.happycoders.binarytree.BinaryTree;
+import eu.happycoders.binarytree.BreadthFirstTraversal;
+import eu.happycoders.binarytree.DepthFirstTraversalIterative;
+import eu.happycoders.binarytree.DepthFirstTraversalRecursive;
 import eu.happycoders.binarytree.Node;
 import eu.happycoders.binarytree.NodeVisitor;
 import eu.happycoders.binarytree.SimpleBinaryTree;
 import eu.happycoders.binarytree.SimpleBinaryTree.Side;
-import eu.happycoders.binarytree.TraversalDepthFirstIterative;
 
 @SuppressWarnings({ //
   "squid:S106", // using stdout in this example
@@ -46,32 +48,36 @@ public class Example1 {
   }
 
   private static void traverseTreeInVariousWays(BinaryTree tree) {
+    var depthFirstRecursive = new DepthFirstTraversalRecursive(tree);
+    var depthFirstIterative = new DepthFirstTraversalIterative(tree);
+    var breadthFirst = new BreadthFirstTraversal(tree);
+
     System.out.println("Pre-order (recursive):");
-    tree.traversePreOrder(VISITOR);
+    depthFirstRecursive.traversePreOrder(VISITOR);
 
     System.out.println("\n\nPre-order (iterative):");
-    TraversalDepthFirstIterative.traversePreOrder(tree.getRoot(), VISITOR);
+    depthFirstIterative.traversePreOrder(VISITOR);
 
     System.out.println("\n\nPost-order (recursive):");
-    tree.traversePostOrder(VISITOR);
+    depthFirstRecursive.traversePostOrder(VISITOR);
 
     System.out.println("\n\nPost-order (iterative):");
-    TraversalDepthFirstIterative.traversePostOrder(tree.getRoot(), VISITOR);
+    depthFirstIterative.traversePostOrder(VISITOR);
 
     System.out.println("\n\nIn-order (recursive):");
-    tree.traverseInOrder(VISITOR);
+    depthFirstRecursive.traverseInOrder(VISITOR);
 
     System.out.println("\n\nIn-order (iterative):");
-    TraversalDepthFirstIterative.traverseInOrder(tree.getRoot(), VISITOR);
+    depthFirstIterative.traverseInOrder(VISITOR);
 
     System.out.println("\n\nReverse in-order (recursive):");
-    tree.traverseReverseInOrder(VISITOR);
+    depthFirstRecursive.traverseReverseInOrder(VISITOR);
 
     System.out.println("\n\nReverse in-order (iterative):");
-    TraversalDepthFirstIterative.traverseReverseInOrder(tree.getRoot(), VISITOR);
+    depthFirstIterative.traverseReverseInOrder(VISITOR);
 
     System.out.println("\n\nLevel-order:");
-    tree.traverseLevelOrder(VISITOR);
+    breadthFirst.traverseLevelOrder(VISITOR);
   }
 
   private static void deleteSomeNodes(TreeWithNodesToDelete treeWithNodes) {
@@ -81,19 +87,20 @@ public class Example1 {
     tree.deleteNode(treeWithNodes.node13);
 
     System.out.println("\n\nDeleted node 13 --> In-order:");
-    tree.traverseInOrder(VISITOR);
+    var depthFirst = new DepthFirstTraversalRecursive(tree);
+    depthFirst.traverseInOrder(VISITOR);
 
     // Case B - delete an internal node with one child (a.k.a. half leaf)
     tree.deleteNode(treeWithNodes.node1);
 
     System.out.println("\n\nDeleted node 1 --> In-order:");
-    tree.traverseInOrder(VISITOR);
+    depthFirst.traverseInOrder(VISITOR);
 
     // Case C - delete an internal node with two children
     tree.deleteNode(treeWithNodes.node16);
 
     System.out.println("\n\nDeleted node 16 --> In-order:");
-    tree.traverseInOrder(VISITOR);
+    depthFirst.traverseInOrder(VISITOR);
   }
 
   private static class TreeWithNodesToDelete {

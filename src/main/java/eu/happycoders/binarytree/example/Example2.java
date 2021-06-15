@@ -1,15 +1,17 @@
 package eu.happycoders.binarytree.example;
 
 import eu.happycoders.binarytree.BinaryTree;
+import eu.happycoders.binarytree.BreadthFirstTraversal;
+import eu.happycoders.binarytree.DepthFirstTraversalRecursive;
 import eu.happycoders.binarytree.Node;
 import eu.happycoders.binarytree.NodeVisitor;
 import eu.happycoders.binarytree.SimpleBinaryTree;
 import eu.happycoders.binarytree.SimpleBinaryTree.Side;
 
 @SuppressWarnings({ //
-    "squid:S106", // using stdout in this example
-    "squid:S1481", // using unused local variables in this example
-    "squid:S1854" // using useless assignments in this example
+  "squid:S106", // using stdout in this example
+  "squid:S1481", // using unused local variables in this example
+  "squid:S1854" // using useless assignments in this example
 })
 public class Example2 {
 
@@ -40,19 +42,22 @@ public class Example2 {
   }
 
   private static void traverseTreeInVariousWays(BinaryTree tree) {
+    var depthFirst = new DepthFirstTraversalRecursive(tree);
+    var breadthFirst = new BreadthFirstTraversal(tree);
+
     System.out.println("Pre-order (recursive):");
-    tree.traversePreOrder(VISITOR);
+    depthFirst.traversePreOrder(VISITOR);
 
     System.out.println("\n\nPost-order (recursive):");
-    tree.traversePostOrder(VISITOR);
+    depthFirst.traversePostOrder(VISITOR);
 
     System.out.println("\n\nIn-order (recursive):");
-    tree.traverseInOrder(VISITOR);
+    depthFirst.traverseInOrder(VISITOR);
 
     System.out.println("\n\nReverse in-order (recursive):");
-    tree.traverseReverseInOrder(VISITOR);
+    depthFirst.traverseReverseInOrder(VISITOR);
 
     System.out.println("\n\nLevel-order:");
-    tree.traverseLevelOrder(VISITOR);
+    breadthFirst.traverseLevelOrder(VISITOR);
   }
 }

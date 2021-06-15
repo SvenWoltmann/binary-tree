@@ -7,7 +7,7 @@ import java.util.Objects;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class SimpleBinaryTree extends BinaryTree {
+public class SimpleBinaryTree extends BaseBinaryTree {
 
   /** Indicates the child position (left, right) when inserting a node. */
   public enum Side {

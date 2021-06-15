@@ -3,6 +3,7 @@ package eu.happycoders.binarytree.example;
 import eu.happycoders.binarytree.BinarySearchTree;
 import eu.happycoders.binarytree.BinarySearchTreeIterative;
 import eu.happycoders.binarytree.BinarySearchTreeRecursive;
+import eu.happycoders.binarytree.DepthFirstTraversalRecursive;
 import eu.happycoders.binarytree.Node;
 import eu.happycoders.binarytree.NodeVisitor;
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class Example3 {
     }
 
     System.out.print("\nAll keys in-order: ");
-    tree.traverseInOrder(VISITOR);
+    new DepthFirstTraversalRecursive(tree).traverseInOrder(VISITOR);
 
     System.out.println("\n\nSearching...");
 

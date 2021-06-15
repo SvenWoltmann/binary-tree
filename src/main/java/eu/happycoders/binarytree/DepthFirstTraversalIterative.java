@@ -8,24 +8,22 @@ import java.util.Deque;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public final class TraversalDepthFirstIterative {
+public final class DepthFirstTraversalIterative implements DepthFirstTraversal {
 
-  private TraversalDepthFirstIterative() {}
+  private final BinaryTree tree;
 
-  /**
-   * Traverses the tree in pre-order and calls the {@link NodeVisitor#visit(Node)} method on each
-   * node.
-   *
-   * @param node the node
-   * @param visitor the visitor
-   */
-  public static void traversePreOrder(Node node, NodeVisitor visitor) {
+  public DepthFirstTraversalIterative(BinaryTree tree) {
+    this.tree = tree;
+  }
+
+  @Override
+  public void traversePreOrder(NodeVisitor visitor) {
+    Node node = tree.getRoot();
     if (node == null) {
       return;
     }
 
-    // Not using a java.util.Stack here.
-    // See
+    // Not using a java.util.Stack here. See
     // https://www.happycoders.eu/java/queue-deque-stack-ultimate-guide/#Why_you_should_not_use_Stack
     Deque<Node> stack = new ArrayDeque<>();
     stack.push(node);
@@ -42,20 +40,14 @@ public final class TraversalDepthFirstIterative {
     }
   }
 
-  /**
-   * Traverses the tree in post-order and calls the {@link NodeVisitor#visit(Node)} method on each
-   * node.
-   *
-   * @param node the node
-   * @param visitor the visitor
-   */
-  public static void traversePostOrder(Node node, NodeVisitor visitor) {
-    // Not using a java.util.Stack here.
-    // See
+  @Override
+  public void traversePostOrder(NodeVisitor visitor) {
+    Node node = tree.getRoot();
+    Node lastVisitedNode = null;
+
+    // Not using a java.util.Stack here. See
     // https://www.happycoders.eu/java/queue-deque-stack-ultimate-guide/#Why_you_should_not_use_Stack
     Deque<Node> stack = new ArrayDeque<>();
-
-    Node lastVisitedNode = null;
 
     while (!stack.isEmpty() || node != null) {
       if (node != null) {
@@ -73,15 +65,11 @@ public final class TraversalDepthFirstIterative {
     }
   }
 
-  /**
-   * Traverses the tree in-order and calls the {@link NodeVisitor#visit(Node)} method on each node.
-   *
-   * @param node the node
-   * @param visitor the visitor
-   */
-  public static void traverseInOrder(Node node, NodeVisitor visitor) {
-    // Not using a java.util.Stack here.
-    // See
+  @Override
+  public void traverseInOrder(NodeVisitor visitor) {
+    Node node = tree.getRoot();
+
+    // Not using a java.util.Stack here. See
     // https://www.happycoders.eu/java/queue-deque-stack-ultimate-guide/#Why_you_should_not_use_Stack
     Deque<Node> stack = new ArrayDeque<>();
 
@@ -97,16 +85,11 @@ public final class TraversalDepthFirstIterative {
     }
   }
 
-  /**
-   * Traverses the tree reverse in-order and calls the {@link NodeVisitor#visit(Node)} method on
-   * each node.
-   *
-   * @param node the node
-   * @param visitor the visitor
-   */
-  public static void traverseReverseInOrder(Node node, NodeVisitor visitor) {
-    // Not using a java.util.Stack here.
-    // See
+  @Override
+  public void traverseReverseInOrder(NodeVisitor visitor) {
+    Node node = tree.getRoot();
+
+    // Not using a java.util.Stack here. See
     // https://www.happycoders.eu/java/queue-deque-stack-ultimate-guide/#Why_you_should_not_use_Stack
     Deque<Node> stack = new ArrayDeque<>();
 
