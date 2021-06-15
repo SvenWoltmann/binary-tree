@@ -133,6 +133,7 @@
             <artifactId>spotbugs-maven-plugin</artifactId>
             <version>${spotbugs.version}</version>
             <configuration>
+              <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
               <plugins>
                 <plugin>
                   <groupId>com.h3xstream.findsecbugs</groupId>
@@ -161,6 +162,9 @@
               <rulesets>
                 <ruleset>ruleset.xml</ruleset>
               </rulesets>
+              <excludes>
+                <exclude>**/example/*.java</exclude>
+              </excludes>
             </configuration>
             <dependencies>
               <dependency>
@@ -191,6 +195,7 @@
             <version>${checkstyle-plugin.version}</version>
             <configuration>
               <configLocation>${project.basedir}/google_checks.xml</configLocation>
+              <suppressionsLocation>${project.basedir}/checkstyle-suppressions.xml</suppressionsLocation>
             </configuration>
             <dependencies>
               <dependency>

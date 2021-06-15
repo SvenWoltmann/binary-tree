@@ -1,4 +1,4 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
 /**
  * A binary tree implementation with facade methods for recursive depth-first traversal and
@@ -8,7 +8,7 @@ package eu.happycoders.binary_tree;
  */
 public class BinaryTree {
 
-  Node root;
+  protected Node root;
 
   /**
    * Returns the binary tree's root node.

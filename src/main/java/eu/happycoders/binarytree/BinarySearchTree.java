@@ -1,4 +1,4 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
 /**
  * A binary search tree implementation with <code>int</code> keys.
@@ -18,7 +18,9 @@ public class BinarySearchTree extends BinaryTree {
   }
 
   private Node searchNodeRecursively(int key, Node node) {
-    if (node == null) return null;
+    if (node == null) {
+      return null;
+    }
 
     if (key == node.data) {
       return node;
@@ -132,7 +134,9 @@ public class BinarySearchTree extends BinaryTree {
 
   private Node deleteNodeRecursively(int key, Node node) {
     // No node at current position --> go up the recursion
-    if (node == null) return null;
+    if (node == null) {
+      return null;
+    }
 
     // Traverse the tree to the left or right depending on the key
     if (key < node.data) {
@@ -202,7 +206,9 @@ public class BinarySearchTree extends BinaryTree {
     }
 
     // Node not found?
-    if (node == null) return;
+    if (node == null) {
+      return;
+    }
 
     // At this point, "node" is the node to be deleted
 

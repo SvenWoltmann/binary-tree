@@ -1,4 +1,4 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;

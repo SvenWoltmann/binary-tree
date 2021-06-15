@@ -1,13 +1,18 @@
-package eu.happycoders.binary_tree.example;
+package eu.happycoders.binarytree.example;
 
-import eu.happycoders.binary_tree.BinarySearchTree;
-import eu.happycoders.binary_tree.Node;
-import eu.happycoders.binary_tree.NodeVisitor;
+import eu.happycoders.binarytree.BinarySearchTree;
+import eu.happycoders.binarytree.Node;
+import eu.happycoders.binarytree.NodeVisitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings({ //
+  "squid:S106", // using stdout in this example
+  "squid:S1481", // using unused local variables in this example
+  "squid:S1854" // using useless assignments in this example
+})
 public class Example3 {
 
   private static final Integer[] KEYS = new Integer[] {1, 2, 3, 4, 5, 6, 9, 10, 11, 13, 15, 16};

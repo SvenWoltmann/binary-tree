@@ -1,4 +1,4 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -18,7 +18,7 @@ public class BinaryTreeAssert {
   }
 
   public BinaryTreeAssert isValid() {
-    if (!BinarySearchTreeValidator.isBSTWithoutDuplicates(tree)) {
+    if (!BinarySearchTreeValidator.isBstWithoutDuplicates(tree)) {
       throw new AssertionError("Tree is not a valid BST");
     }
     return this;

@@ -1,4 +1,4 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
 public class TestTree {
 

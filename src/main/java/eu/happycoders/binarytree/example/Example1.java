@@ -1,12 +1,17 @@
-package eu.happycoders.binary_tree.example;
+package eu.happycoders.binarytree.example;
 
-import eu.happycoders.binary_tree.BinaryTree;
-import eu.happycoders.binary_tree.Node;
-import eu.happycoders.binary_tree.NodeVisitor;
-import eu.happycoders.binary_tree.SimpleBinaryTree;
-import eu.happycoders.binary_tree.SimpleBinaryTree.Side;
-import eu.happycoders.binary_tree.TraversalDepthFirstIterative;
+import eu.happycoders.binarytree.BinaryTree;
+import eu.happycoders.binarytree.Node;
+import eu.happycoders.binarytree.NodeVisitor;
+import eu.happycoders.binarytree.SimpleBinaryTree;
+import eu.happycoders.binarytree.SimpleBinaryTree.Side;
+import eu.happycoders.binarytree.TraversalDepthFirstIterative;
 
+@SuppressWarnings({ //
+  "squid:S106", // using stdout in this example
+  "squid:S1481", // using unused local variables in this example
+  "squid:S1854" // using useless assignments in this example
+})
 public class Example1 {
 
   private static final NodeVisitor VISITOR = node -> System.out.print(node.getData() + " ");

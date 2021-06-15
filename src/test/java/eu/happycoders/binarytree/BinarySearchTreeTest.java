@@ -1,6 +1,6 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
-import static eu.happycoders.binary_tree.BinaryTreeAssert.assertThatTree;
+import static eu.happycoders.binarytree.BinaryTreeAssert.assertThatTree;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;

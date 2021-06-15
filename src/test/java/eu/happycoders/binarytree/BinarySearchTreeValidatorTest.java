@@ -1,24 +1,24 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
-import static eu.happycoders.binary_tree.BinarySearchTreeValidator.isBSTWithoutDuplicates;
+import static eu.happycoders.binarytree.BinarySearchTreeValidator.isBstWithoutDuplicates;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 import org.junit.jupiter.api.Test;
 
-public class BinarySearchTreeValidatorTest {
+class BinarySearchTreeValidatorTest {
 
   @Test
   void shouldReturnTrueForEmptyTree() {
     BinaryTree tree = new BinaryTree();
-    assertThat(isBSTWithoutDuplicates(tree), is(true));
+    assertThat(isBstWithoutDuplicates(tree), is(true));
   }
 
   @Test
   void shouldReturnTrueForTreeWithOneNode() {
     BinaryTree tree = new BinaryTree();
     tree.root = new Node(100);
-    assertThat(isBSTWithoutDuplicates(tree), is(true));
+    assertThat(isBstWithoutDuplicates(tree), is(true));
   }
 
   @Test
@@ -26,7 +26,7 @@ public class BinarySearchTreeValidatorTest {
     BinaryTree tree = new BinaryTree();
     tree.root = new Node(100);
     tree.root.left = new Node(50);
-    assertThat(isBSTWithoutDuplicates(tree), is(true));
+    assertThat(isBstWithoutDuplicates(tree), is(true));
   }
 
   @Test
@@ -34,7 +34,7 @@ public class BinarySearchTreeValidatorTest {
     BinaryTree tree = new BinaryTree();
     tree.root = new Node(100);
     tree.root.left = new Node(110);
-    assertThat(isBSTWithoutDuplicates(tree), is(false));
+    assertThat(isBstWithoutDuplicates(tree), is(false));
   }
 
   @Test
@@ -42,7 +42,7 @@ public class BinarySearchTreeValidatorTest {
     BinaryTree tree = new BinaryTree();
     tree.root = new Node(100);
     tree.root.right = new Node(110);
-    assertThat(isBSTWithoutDuplicates(tree), is(true));
+    assertThat(isBstWithoutDuplicates(tree), is(true));
   }
 
   @Test
@@ -50,7 +50,7 @@ public class BinarySearchTreeValidatorTest {
     BinaryTree tree = new BinaryTree();
     tree.root = new Node(100);
     tree.root.right = new Node(90);
-    assertThat(isBSTWithoutDuplicates(tree), is(false));
+    assertThat(isBstWithoutDuplicates(tree), is(false));
   }
 
   @Test
@@ -71,7 +71,7 @@ public class BinarySearchTreeValidatorTest {
     tree.root.right.right.left.right = new Node(13);
     tree.root.right.right.right = new Node(16);
 
-    assertThat(isBSTWithoutDuplicates(tree), is(true));
+    assertThat(isBstWithoutDuplicates(tree), is(true));
   }
 
   @Test
@@ -92,7 +92,7 @@ public class BinarySearchTreeValidatorTest {
     tree.root.right.right.left.right = new Node(13);
     tree.root.right.right.right = new Node(16);
 
-    assertThat(isBSTWithoutDuplicates(tree), is(false));
+    assertThat(isBstWithoutDuplicates(tree), is(false));
   }
 
   @Test
@@ -113,6 +113,6 @@ public class BinarySearchTreeValidatorTest {
     tree.root.right.right.right = new Node(16);
     tree.root.right.right.right.left = new Node(13);
 
-    assertThat(isBSTWithoutDuplicates(tree), is(false));
+    assertThat(isBstWithoutDuplicates(tree), is(false));
   }
 }

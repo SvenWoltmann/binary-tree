@@ -1,4 +1,4 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
 /**
  * A node in a binary tree, containing an <code>int</code> data.
@@ -15,6 +15,11 @@ public class Node {
   Node right;
   Node parent;
 
+  /**
+   * Constructs a new node with the given data.
+   *
+   * @param data the data to store in the node
+   */
   public Node(int data) {
     this.data = data;
   }

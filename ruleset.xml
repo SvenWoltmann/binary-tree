@@ -7,20 +7,44 @@
 
   <description>PMD ruleset for HappyCoders.eu</description>
 
-  <rule ref="category/java/bestpractices.xml"/>
+  <rule ref="category/java/bestpractices.xml">
+    <exclude name="AvoidReassigningParameters"/>  <!-- In Java, this is OK, IMO -->
+    <exclude name="SwitchStmtsShouldHaveDefault"/><!-- PMD doesn't recognize Java's new switch statements -->
+  </rule>
 
-  <rule ref="category/java/codestyle.xml"/>
+  <rule ref="category/java/codestyle.xml">
+    <exclude name="AtLeastOneConstructor"/>       <!-- No need for artificial default constructors -->
+    <exclude name="CommentDefaultAccessModifier"/><!-- We don't comment why we make fields private, protected or public. So why should we comment on default access? -->
+    <exclude name="ConfusingTernary"/>            <!-- Sometimes they make the code flow easier to follow -->
+    <exclude name="LocalVariableCouldBeFinal"/>   <!-- Personal taste -->
+    <exclude name="MethodArgumentCouldBeFinal"/>  <!-- Personal taste -->
+    <exclude name="OnlyOneReturn"/>               <!-- Makes methods more complicated than necessary, IMO -->
+    <exclude name="ShortClassName"/>              <!-- Wouldn't allow class names like "User" -->
+    <exclude name="ShortMethodName"/>             <!-- Wouldn't allow method names like "of" -->
+  </rule>
   <rule ref="category/java/codestyle.xml/ClassNamingConventions">
     <properties>
       <property name="utilityClassPattern" value="[A-Z][a-zA-Z0-9]*" /><!-- Don't enforce specific names on utility classes! -->
     </properties>
   </rule>
+  <rule ref="category/java/codestyle.xml/LongVariable">
+    <properties>
+      <property name="minimum" value="33" />      <!-- Default max is 16, which is not always enough -->
+    </properties>
+  </rule>
 
   <rule ref="category/java/design.xml"/>
 
-  <rule ref="category/java/documentation.xml"/>
+  <rule ref="category/java/documentation.xml">
+    <exclude name="CommentRequired"/>             <!-- Don't need comments on *all* fields -->
+    <exclude name="CommentSize"/>                 <!-- Don't limit the size of comments -->
+  </rule>
 
-  <rule ref="category/java/errorprone.xml"/>
+  <rule ref="category/java/errorprone.xml">
+    <exclude name="BeanMembersShouldSerialize"/><!-- We don't want to serialize anything -->
+    <exclude name="CompareObjectsWithEquals"/>  <!-- We use == to compare node instances -->
+    <exclude name="NullAssignment"/>            <!-- We don't want all references (in Node, for example) be an Optional! -->
+  </rule>
 
   <rule ref="category/java/multithreading.xml"/>
 

@@ -1,4 +1,4 @@
-package eu.happycoders.binary_tree;
+package eu.happycoders.binarytree;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import eu.happycoders.binary_tree.SimpleBinaryTree.Side;
+import eu.happycoders.binarytree.SimpleBinaryTree.Side;
 import org.junit.jupiter.api.Test;
 
 class SimpleBinaryTreeTest {
