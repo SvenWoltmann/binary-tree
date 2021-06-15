@@ -9,7 +9,7 @@ import eu.happycoders.binary_tree.TraversalDepthFirstIterative;
 
 public class Example1 {
 
-  private static final NodeVisitor visitor = node -> System.out.print(node.getData() + " ");
+  private static final NodeVisitor VISITOR = node -> System.out.print(node.getData() + " ");
 
   public static void main(String[] args) {
     TreeWithNodesToDelete treeWithNodes = createSampleTree();
@@ -42,31 +42,31 @@ public class Example1 {
 
   private static void traverseTreeInVariousWays(BinaryTree tree) {
     System.out.println("Pre-order (recursive):");
-    tree.traversePreOrder(visitor);
+    tree.traversePreOrder(VISITOR);
 
     System.out.println("\n\nPre-order (iterative):");
-    TraversalDepthFirstIterative.traversePreOrder(tree.getRoot(), visitor);
+    TraversalDepthFirstIterative.traversePreOrder(tree.getRoot(), VISITOR);
 
     System.out.println("\n\nPost-order (recursive):");
-    tree.traversePostOrder(visitor);
+    tree.traversePostOrder(VISITOR);
 
     System.out.println("\n\nPost-order (iterative):");
-    TraversalDepthFirstIterative.traversePostOrder(tree.getRoot(), visitor);
+    TraversalDepthFirstIterative.traversePostOrder(tree.getRoot(), VISITOR);
 
     System.out.println("\n\nIn-order (recursive):");
-    tree.traverseInOrder(visitor);
+    tree.traverseInOrder(VISITOR);
 
     System.out.println("\n\nIn-order (iterative):");
-    TraversalDepthFirstIterative.traverseInOrder(tree.getRoot(), visitor);
+    TraversalDepthFirstIterative.traverseInOrder(tree.getRoot(), VISITOR);
 
     System.out.println("\n\nReverse in-order (recursive):");
-    tree.traverseReverseInOrder(visitor);
+    tree.traverseReverseInOrder(VISITOR);
 
     System.out.println("\n\nReverse in-order (iterative):");
-    TraversalDepthFirstIterative.traverseReverseInOrder(tree.getRoot(), visitor);
+    TraversalDepthFirstIterative.traverseReverseInOrder(tree.getRoot(), VISITOR);
 
     System.out.println("\n\nLevel-order:");
-    tree.traverseLevelOrder(visitor);
+    tree.traverseLevelOrder(VISITOR);
   }
 
   private static void deleteSomeNodes(TreeWithNodesToDelete treeWithNodes) {
@@ -76,19 +76,19 @@ public class Example1 {
     tree.deleteNode(treeWithNodes.node13);
 
     System.out.println("\n\nDeleted node 13 --> In-order:");
-    tree.traverseInOrder(visitor);
+    tree.traverseInOrder(VISITOR);
 
     // Case B - delete an internal node with one child (a.k.a. half leaf)
     tree.deleteNode(treeWithNodes.node1);
 
     System.out.println("\n\nDeleted node 1 --> In-order:");
-    tree.traverseInOrder(visitor);
+    tree.traverseInOrder(VISITOR);
 
     // Case C - delete an internal node with two children
     tree.deleteNode(treeWithNodes.node16);
 
     System.out.println("\n\nDeleted node 16 --> In-order:");
-    tree.traverseInOrder(visitor);
+    tree.traverseInOrder(VISITOR);
   }
 
   private static class TreeWithNodesToDelete {

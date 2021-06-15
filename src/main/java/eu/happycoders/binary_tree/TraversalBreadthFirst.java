@@ -8,7 +8,7 @@ import java.util.Queue;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class TraversalBreadthFirst {
+public final class TraversalBreadthFirst {
 
   private TraversalBreadthFirst() {}
 

@@ -5,7 +5,7 @@ package eu.happycoders.binary_tree;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class TraversalDepthFirstRecursive {
+public final class TraversalDepthFirstRecursive {
 
   private TraversalDepthFirstRecursive() {}
 

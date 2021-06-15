@@ -8,7 +8,7 @@ import eu.happycoders.binary_tree.SimpleBinaryTree.Side;
 
 public class Example2 {
 
-  private static final NodeVisitor visitor = node -> System.out.print(node.getData() + " ");
+  private static final NodeVisitor VISITOR = node -> System.out.print(node.getData() + " ");
 
   public static void main(String[] args) {
     SimpleBinaryTree tree = createSampleTree();
@@ -36,18 +36,18 @@ public class Example2 {
 
   private static void traverseTreeInVariousWays(BinaryTree tree) {
     System.out.println("Pre-order (recursive):");
-    tree.traversePreOrder(visitor);
+    tree.traversePreOrder(VISITOR);
 
     System.out.println("\n\nPost-order (recursive):");
-    tree.traversePostOrder(visitor);
+    tree.traversePostOrder(VISITOR);
 
     System.out.println("\n\nIn-order (recursive):");
-    tree.traverseInOrder(visitor);
+    tree.traverseInOrder(VISITOR);
 
     System.out.println("\n\nReverse in-order (recursive):");
-    tree.traverseReverseInOrder(visitor);
+    tree.traverseReverseInOrder(VISITOR);
 
     System.out.println("\n\nLevel-order:");
-    tree.traverseLevelOrder(visitor);
+    tree.traverseLevelOrder(VISITOR);
   }
 }

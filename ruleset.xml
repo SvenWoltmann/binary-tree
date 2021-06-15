@@ -8,12 +8,24 @@
   <description>PMD ruleset for HappyCoders.eu</description>
 
   <rule ref="category/java/bestpractices.xml"/>
+
   <rule ref="category/java/codestyle.xml"/>
+  <rule ref="category/java/codestyle.xml/ClassNamingConventions">
+    <properties>
+      <property name="utilityClassPattern" value="[A-Z][a-zA-Z0-9]*" /><!-- Don't enforce specific names on utility classes! -->
+    </properties>
+  </rule>
+
   <rule ref="category/java/design.xml"/>
+
   <rule ref="category/java/documentation.xml"/>
+
   <rule ref="category/java/errorprone.xml"/>
+
   <rule ref="category/java/multithreading.xml"/>
+
   <rule ref="category/java/performance.xml"/>
+
   <rule ref="category/java/security.xml"/>
 
 </ruleset>

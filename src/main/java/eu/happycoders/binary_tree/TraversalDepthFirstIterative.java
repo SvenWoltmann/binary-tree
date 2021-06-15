@@ -8,7 +8,7 @@ import java.util.Deque;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class TraversalDepthFirstIterative {
+public final class TraversalDepthFirstIterative {
 
   private TraversalDepthFirstIterative() {}
 
