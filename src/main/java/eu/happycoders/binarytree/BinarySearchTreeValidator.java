@@ -5,7 +5,7 @@ package eu.happycoders.binarytree;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class BinarySearchTreeValidator extends BinaryTree {
+public class BinarySearchTreeValidator {
 
   /**
    * Validates if the given binary tree is a binary search tree (with no duplicates allowed).
@@ -14,7 +14,7 @@ public class BinarySearchTreeValidator extends BinaryTree {
    * @return whether the given binary tree is a binary search tree
    */
   public static boolean isBstWithoutDuplicates(BinaryTree tree) {
-    return isBstWithoutDuplicates(tree.root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    return isBstWithoutDuplicates(tree.getRoot(), Integer.MIN_VALUE, Integer.MAX_VALUE);
   }
 
   private static boolean isBstWithoutDuplicates(Node node, int minAllowedKey, int maxAllowedKey) {
@@ -37,7 +37,7 @@ public class BinarySearchTreeValidator extends BinaryTree {
    * @return whether the given binary tree is a binary search tree
    */
   public static boolean isBstWithDuplicates(BinaryTree tree) {
-    return isBstWithDuplicates(tree.root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    return isBstWithDuplicates(tree.getRoot(), Integer.MIN_VALUE, Integer.MAX_VALUE);
   }
 
   private static boolean isBstWithDuplicates(Node node, int minAllowedKey, int maxAllowedKey) {

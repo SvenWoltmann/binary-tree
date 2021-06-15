@@ -7,23 +7,23 @@ import static org.hamcrest.Matchers.is;
 
 import org.junit.jupiter.api.Test;
 
-class TraversalBreadthFirstTest {
+class BreadthFirstTraversalTest {
 
   @Test
   void traverseLevelOrder_sampleTree_traversesTreeInLevelOrder() {
     TestNodeVisitor visitor = new TestNodeVisitor();
-    TraversalBreadthFirst.traverseLevelOrder(TestTree.ROOT, visitor);
-    assertThat(visitor.getDataList(), contains(TestTree.LEVEL_ORDER_VALUES));
+    new BreadthFirstTraversal(new TestTreeWithValues()).traverseLevelOrder(visitor);
+    assertThat(visitor.getDataList(), contains(TestTreeWithValues.LEVEL_ORDER_VALUES));
   }
 
   @Test
   void traverseLevelOrder_emptyTree_traversesNoElement() {
     TestNodeVisitor visitor = new TestNodeVisitor();
-    TraversalBreadthFirst.traverseLevelOrder(emptyTree().root, visitor);
+    new BreadthFirstTraversal(emptyTree()).traverseLevelOrder(visitor);
     assertThat(visitor.getDataList(), is(empty()));
   }
 
   private BinaryTree emptyTree() {
-    return new BinaryTree();
+    return () -> null;
   }
 }

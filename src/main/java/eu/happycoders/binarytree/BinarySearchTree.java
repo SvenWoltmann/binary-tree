@@ -1,15 +1,31 @@
 package eu.happycoders.binarytree;
 
 /**
- * Abstract class for various BST implementations.
+ * Interface for various BST implementations.
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public abstract class BinarySearchTree extends BinaryTree {
+public interface BinarySearchTree extends BinaryTree {
 
-  public abstract Node searchNode(int key);
+  /**
+   * Searches for a node with the given search key.
+   *
+   * @param key the search key
+   * @return the node or <code>null</code> if no node with the given search key exists
+   */
+  Node searchNode(int key);
 
-  public abstract void insertNode(int key);
+  /**
+   * Inserts a node with the given key.
+   *
+   * @param key the key of the node to be inserted
+   */
+  void insertNode(int key);
 
-  public abstract void deleteNode(int key);
+  /**
+   * Deletes the node with the given key.
+   *
+   * @param key the key of the node to be deleted
+   */
+  void deleteNode(int key);
 }

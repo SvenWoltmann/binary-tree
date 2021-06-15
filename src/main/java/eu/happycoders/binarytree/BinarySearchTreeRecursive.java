@@ -5,14 +5,8 @@ package eu.happycoders.binarytree;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class BinarySearchTreeRecursive extends BinarySearchTree {
+public class BinarySearchTreeRecursive extends BaseBinaryTree implements BinarySearchTree {
 
-  /**
-   * Searches recursively for a node with the given search key.
-   *
-   * @param key the search key
-   * @return the node or <code>null</code> if no node with the given search key exists
-   */
   @Override
   public Node searchNode(int key) {
     return searchNode(key, root);
@@ -32,11 +26,6 @@ public class BinarySearchTreeRecursive extends BinarySearchTree {
     }
   }
 
-  /**
-   * Recursively inserts a node with the given key.
-   *
-   * @param key the key of the node to be inserted
-   */
   @Override
   public void insertNode(int key) {
     root = insertNode(key, root);
@@ -62,11 +51,6 @@ public class BinarySearchTreeRecursive extends BinarySearchTree {
     return node;
   }
 
-  /**
-   * Recursively deletes the node with the given key.
-   *
-   * @param key the key of the node to be deleted
-   */
   @Override
   public void deleteNode(int key) {
     root = deleteNode(key, root);

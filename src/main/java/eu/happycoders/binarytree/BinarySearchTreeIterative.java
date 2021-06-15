@@ -5,14 +5,8 @@ package eu.happycoders.binarytree;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class BinarySearchTreeIterative extends BinarySearchTree {
+public class BinarySearchTreeIterative extends BaseBinaryTree implements BinarySearchTree {
 
-  /**
-   * Searches iteratively for a node with the given search key.
-   *
-   * @param key the search key
-   * @return the node or <code>null</code> if no node with the given search key exists
-   */
   @Override
   public Node searchNode(int key) {
     Node node = root;
@@ -29,11 +23,6 @@ public class BinarySearchTreeIterative extends BinarySearchTree {
     return null;
   }
 
-  /**
-   * Iteratively inserts a node with the given key.
-   *
-   * @param key the key of the node to be inserted
-   */
   @Override
   public void insertNode(int key) {
     Node newNode = new Node(key);
@@ -72,11 +61,6 @@ public class BinarySearchTreeIterative extends BinarySearchTree {
     }
   }
 
-  /**
-   * Iteratively deletes a node with the given key.
-   *
-   * @param key the key of the node to be deleted
-   */
   @Override
   public void deleteNode(int key) {
     Node node = root;

@@ -8,9 +8,23 @@ import java.util.Queue;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public final class TraversalBreadthFirst {
+public final class BreadthFirstTraversal {
 
-  private TraversalBreadthFirst() {}
+  private final BinaryTree tree;
+
+  public BreadthFirstTraversal(BinaryTree tree) {
+    this.tree = tree;
+  }
+
+  /**
+   * Traverses the tree level-order and calls the {@link NodeVisitor#visit(Node)} method on each
+   * node.
+   *
+   * @param visitor the visitor
+   */
+  public void traverseLevelOrder(NodeVisitor visitor) {
+    traverseLevelOrder(tree.getRoot(), visitor);
+  }
 
   /**
    * Traverses the tree level-order and calls the {@link NodeVisitor#visit(Node)} method on each

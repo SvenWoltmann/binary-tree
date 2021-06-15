@@ -26,13 +26,13 @@ public class BinaryTreeAssert {
 
   public BinaryTreeAssert hasKeysInGivenOrder(List<Integer> keys) {
     TestNodeVisitor visitor = new TestNodeVisitor();
-    tree.traverseInOrder(visitor);
+    new DepthFirstTraversalRecursive(tree).traverseInOrder(visitor);
     assertThat(visitor.getDataList(), is(keys));
     return this;
   }
 
   public BinaryTreeAssert hasAllParentsSetCorrectly() {
-    hasAllParentsSetCorrectly(null, tree.root);
+    hasAllParentsSetCorrectly(null, tree.getRoot());
     return this;
   }
 
@@ -40,7 +40,7 @@ public class BinaryTreeAssert {
     if (node == null) return;
 
     // Root must not have a parent
-    if (node == tree.root) {
+    if (node == tree.getRoot()) {
       if (node.parent != null) {
         throw new AssertionError("Not all parents set correctly: root must not have a parent");
       }
