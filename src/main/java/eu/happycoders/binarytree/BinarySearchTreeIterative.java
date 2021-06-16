@@ -50,7 +50,7 @@ public class BinarySearchTreeIterative extends BaseBinaryTree implements BinaryS
           // Right sub-tree exists --> follow
           node = node.right;
         } else {
-          // Left sub-tree does not exist --> insert new node as right child
+          // Right sub-tree does not exist --> insert new node as right child
           node.right = newNode;
           newNode.parent = node;
           return;
