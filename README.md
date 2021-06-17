@@ -11,7 +11,9 @@ Source code for the HappyCoders.eu article series on binary trees:
 ## English Articles
 
 * [Binary Tree (With Java Code)](https://www.happycoders.eu/algorithms/binary-tree-java/)
+* [Binary Search Tree (With Java Code)](https://www.happycoders.eu/algorithms/binary-search-tree-java/)
 
 ## German Articles
 
 * [Binärbaum (mit Java-Code)](https://www.happycoders.eu/de/algorithmen/binaerbaum-java/)
+* [Binärer Suchbaum (mit Java-Code)](https://www.happycoders.eu/de/algorithmen/binaerer-suchbaum-java/)
