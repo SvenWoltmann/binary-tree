@@ -135,7 +135,7 @@ public class SimpleBinaryTree extends BaseBinaryTree {
     if (node == root) {
       root = child;
       if (child != null) {
-        child.parent = root;
+        child.parent = null;
       }
       return;
     }
