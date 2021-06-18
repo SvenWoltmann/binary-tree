@@ -1,5 +1,6 @@
 package eu.happycoders.binarytree;
 
+import static eu.happycoders.binarytree.BinarySearchTreeValidator.isBstWithDuplicates;
 import static eu.happycoders.binarytree.BinarySearchTreeValidator.isBstWithoutDuplicates;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -55,6 +56,70 @@ class BinarySearchTreeValidatorTest {
 
   @Test
   void shouldReturnTrueForComplexValidTree() {
+    BinaryTree tree = generateComplexValidTree();
+
+    assertThat(isBstWithoutDuplicates(tree), is(true));
+  }
+
+  @Test
+  void shouldReturnFalseForComplexInvalidTree1() {
+    BinaryTree tree = generateComplexInvalidTree1();
+
+    assertThat(isBstWithoutDuplicates(tree), is(false));
+  }
+
+  @Test
+  void shouldReturnFalseForComplexInvalidTree2() {
+    BinaryTree tree = generateComplexInvalidTree2();
+
+    assertThat(isBstWithoutDuplicates(tree), is(false));
+  }
+
+  @Test
+  void withDuplicates_shouldReturnTrueForDuplicatesOfRoot() {
+    Node root = new Node(100);
+    root.left = new Node(100);
+    root.right = new Node(100);
+    BinaryTree tree = new TestTree(root);
+
+    assertThat(isBstWithDuplicates(tree), is(true));
+  }
+
+  @Test
+  void withDuplicates_shouldReturnTrueForDuplicateInValidComplexTree() {
+    BinaryTree tree = generateComplexValidTree();
+
+    tree.getRoot().left.left.left = new Node(1);
+    tree.getRoot().right.right.right.left = new Node(16);
+
+    assertThat(isBstWithDuplicates(tree), is(true));
+  }
+
+  @Test
+  void withDuplicates_shouldReturnFalseForDuplicatesWithErrorInValidComplexTree() {
+    BinaryTree tree = generateComplexValidTree();
+
+    tree.getRoot().left.left.left = new Node(1);
+    tree.getRoot().left.left.left.right = new Node(2);
+
+    assertThat(isBstWithDuplicates(tree), is(false));
+  }
+
+  @Test
+  void withDuplicates_shouldReturnFalseForComplexInvalidTree1() {
+    BinaryTree tree = generateComplexInvalidTree1();
+
+    assertThat(isBstWithDuplicates(tree), is(false));
+  }
+
+  @Test
+  void withDuplicates_shouldReturnFalseForComplexInvalidTree2() {
+    BinaryTree tree = generateComplexInvalidTree2();
+
+    assertThat(isBstWithDuplicates(tree), is(false));
+  }
+
+  private BinaryTree generateComplexValidTree() {
     Node root = new Node(5);
 
     root.left = new Node(2);
@@ -70,13 +135,10 @@ class BinarySearchTreeValidatorTest {
     root.right.right.left.right = new Node(13);
     root.right.right.right = new Node(16);
 
-    BinaryTree tree = new TestTree(root);
-
-    assertThat(isBstWithoutDuplicates(tree), is(true));
+    return new TestTree(root);
   }
 
-  @Test
-  void shouldReturnFalseForComplexInvalidTree1() {
+  private BinaryTree generateComplexInvalidTree1() {
     Node root = new Node(5);
 
     root.left = new Node(2);
@@ -92,13 +154,10 @@ class BinarySearchTreeValidatorTest {
     root.right.right.left.right = new Node(13);
     root.right.right.right = new Node(16);
 
-    BinaryTree tree = new TestTree(root);
-
-    assertThat(isBstWithoutDuplicates(tree), is(false));
+    return new TestTree(root);
   }
 
-  @Test
-  void shouldReturnFalseForComplexInvalidTree2() {
+  private BinaryTree generateComplexInvalidTree2() {
     Node root = new Node(5);
 
     root.left = new Node(2);
@@ -114,8 +173,6 @@ class BinarySearchTreeValidatorTest {
     root.right.right.right = new Node(16);
     root.right.right.right.left = new Node(13);
 
-    BinaryTree tree = new TestTree(root);
-
-    assertThat(isBstWithoutDuplicates(tree), is(false));
+    return new TestTree(root);
   }
 }

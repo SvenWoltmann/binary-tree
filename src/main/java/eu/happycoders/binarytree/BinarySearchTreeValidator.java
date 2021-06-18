@@ -45,7 +45,7 @@ public class BinarySearchTreeValidator {
       return true;
     }
 
-    if (node.data <= minAllowedKey || node.data >= maxAllowedKey) {
+    if (node.data < minAllowedKey || node.data > maxAllowedKey) {
       return false;
     }
 
