@@ -97,7 +97,7 @@ public final class DepthFirstTraversalIterative implements DepthFirstTraversal {
       if (node != null) {
         stack.push(node);
         node = node.right;
-      } else if (stack.peek() != null) {
+      } else {
         node = stack.pop();
         visitor.visit(node);
         node = node.left;

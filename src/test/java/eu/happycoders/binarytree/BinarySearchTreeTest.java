@@ -86,6 +86,22 @@ abstract class BinarySearchTreeTest {
     }
   }
 
+  @RepeatedTest(100)
+  void deleteNotExistingKeyShouldNotChangeTheBST() {
+    List<Integer> keysOrdered = createOrderedSequenceOfKeys();
+    Integer highestKey = keysOrdered.get(keysOrdered.size() - 1);
+
+    var tree = createBST();
+    insertKeysInRandomOrder(tree, keysOrdered);
+
+    tree.deleteNode(highestKey + 1);
+
+    assertThatTree(tree) //
+        .isValid()
+        .hasKeysInGivenOrder(keysOrdered)
+        .hasAllParentsSetCorrectly();
+  }
+
   protected abstract BinarySearchTree createBST();
 
   private List<Integer> createOrderedSequenceOfKeys() {

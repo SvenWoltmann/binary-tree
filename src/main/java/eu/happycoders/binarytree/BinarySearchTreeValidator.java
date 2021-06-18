@@ -5,7 +5,9 @@ package eu.happycoders.binarytree;
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
-public class BinarySearchTreeValidator {
+public final class BinarySearchTreeValidator {
+
+  private BinarySearchTreeValidator() {}
 
   /**
    * Validates if the given binary tree is a binary search tree (with no duplicates allowed).
