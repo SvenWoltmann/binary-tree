@@ -45,6 +45,11 @@
     <exclude name="CompareObjectsWithEquals"/>  <!-- We use == to compare node instances -->
     <exclude name="NullAssignment"/>            <!-- We don't want all references (in Node, for example) be an Optional! -->
   </rule>
+  <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
+    <properties>
+      <property name="ignoreMagicNumbers" value="-1,0,1" /><!-- Default is only -1 and 0; add 1 -->
+    </properties>
+  </rule>
 
   <rule ref="category/java/multithreading.xml"/>
 
