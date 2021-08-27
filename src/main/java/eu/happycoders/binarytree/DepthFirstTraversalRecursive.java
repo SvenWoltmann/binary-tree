@@ -18,6 +18,13 @@ public final class DepthFirstTraversalRecursive implements DepthFirstTraversal {
     traversePreOrder(tree.getRoot(), visitor);
   }
 
+  /**
+   * Traverses the tree in pre-order and calls the {@link NodeVisitor#visit(Node)} method on each
+   * node.
+   *
+   * @param node the node
+   * @param visitor the visitor
+   */
   public static void traversePreOrder(Node node, NodeVisitor visitor) {
     if (node == null) {
       return;
