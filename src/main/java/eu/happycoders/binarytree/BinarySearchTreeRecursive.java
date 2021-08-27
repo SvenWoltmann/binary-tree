@@ -37,13 +37,11 @@ public class BinarySearchTreeRecursive extends BaseBinaryTree implements BinaryS
       node = new Node(key);
     }
 
-    // Otherwise traverse the tree to the left or right depending on the key
+    // Otherwise, traverse the tree to the left or right depending on the key
     else if (key < node.data) {
       node.left = insertNode(key, node.left);
-      node.left.parent = node;
     } else if (key > node.data) {
       node.right = insertNode(key, node.right);
-      node.right.parent = node;
     } else {
       throw new IllegalArgumentException("BST already contains a node with key " + key);
     }
@@ -78,10 +76,8 @@ public class BinarySearchTreeRecursive extends BaseBinaryTree implements BinaryS
 
     // Node has only one child --> replace node by its single child
     else if (node.left == null) {
-      node.right.parent = node.parent;
       node = node.right;
     } else if (node.right == null) {
-      node.left.parent = node.parent;
       node = node.left;
     }
 

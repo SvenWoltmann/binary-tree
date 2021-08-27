@@ -13,7 +13,7 @@ public class Node {
 
   Node left;
   Node right;
-  Node parent;
+  Node parent; // used in SimpleBinaryTree
 
   /**
    * Constructs a new node with the given data.

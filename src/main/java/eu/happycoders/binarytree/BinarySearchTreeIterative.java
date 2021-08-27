@@ -42,7 +42,6 @@ public class BinarySearchTreeIterative extends BaseBinaryTree implements BinaryS
         } else {
           // Left sub-tree does not exist --> insert new node as left child
           node.left = newNode;
-          newNode.parent = node;
           return;
         }
       } else if (key > node.data) {
@@ -52,7 +51,6 @@ public class BinarySearchTreeIterative extends BaseBinaryTree implements BinaryS
         } else {
           // Right sub-tree does not exist --> insert new node as right child
           node.right = newNode;
-          newNode.parent = node;
           return;
         }
       } else {
@@ -62,12 +60,15 @@ public class BinarySearchTreeIterative extends BaseBinaryTree implements BinaryS
   }
 
   @Override
+  @SuppressWarnings("squid:S2259") // parent won't be null as it's used only if node != root
   public void deleteNode(int key) {
     Node node = root;
+    Node parent = null;
 
     // Find the node to be deleted
     while (node != null && node.data != key) {
       // Traverse the tree to the left or right depending on the key
+      parent = node;
       if (key < node.data) {
         node = node.left;
       } else {
@@ -84,7 +85,7 @@ public class BinarySearchTreeIterative extends BaseBinaryTree implements BinaryS
 
     // Node has at most one child --> replace node by its single child
     if (node.left == null || node.right == null) {
-      deleteNodeWithZeroOrOneChild(key, node);
+      deleteNodeWithZeroOrOneChild(key, node, parent);
     }
 
     // Node has two children
@@ -93,25 +94,26 @@ public class BinarySearchTreeIterative extends BaseBinaryTree implements BinaryS
     }
   }
 
-  private void deleteNodeWithZeroOrOneChild(int key, Node node) {
+  private void deleteNodeWithZeroOrOneChild(int key, Node node, Node parent) {
     Node singleChild = node.left != null ? node.left : node.right;
 
     if (node == root) {
       root = singleChild;
-    } else if (key < node.parent.data) {
-      node.parent.left = singleChild;
+    } else if (key < parent.data) {
+      parent.left = singleChild;
     } else {
-      node.parent.right = singleChild;
-    }
-
-    if (singleChild != null) {
-      singleChild.parent = node.parent;
+      parent.right = singleChild;
     }
   }
 
   private void deleteNodeWithTwoChildren(Node node) {
     // Find minimum node of right subtree ("inorder successor" of current node)
-    Node inOrderSuccessor = findMinimum(node.right);
+    Node inOrderSuccessor = node.right;
+    Node inOrderSuccessorParent = node;
+    while (inOrderSuccessor.left != null) {
+      inOrderSuccessorParent = inOrderSuccessor;
+      inOrderSuccessor = inOrderSuccessor.left;
+    }
 
     // Copy inorder successor's data to current node
     node.data = inOrderSuccessor.data;
@@ -128,19 +130,7 @@ public class BinarySearchTreeIterative extends BaseBinaryTree implements BinaryS
     else {
       // --> Replace inorder successor's parent's left child
       //     with inorder successor's right child
-      inOrderSuccessor.parent.left = inOrderSuccessor.right;
+      inOrderSuccessorParent.left = inOrderSuccessor.right;
     }
-
-    // Set parent relationship if inorder successor's right child exists
-    if (inOrderSuccessor.right != null) {
-      inOrderSuccessor.right.parent = inOrderSuccessor.parent;
-    }
-  }
-
-  private Node findMinimum(Node node) {
-    while (node.left != null) {
-      node = node.left;
-    }
-    return node;
   }
 }

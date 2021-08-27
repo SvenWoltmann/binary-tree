@@ -15,6 +15,9 @@ import org.junit.jupiter.api.RepeatedTest;
 
 abstract class BinarySearchTreeTest {
 
+  private static final int TEST_TREE_MIN_SIZE = 1;
+  private static final int TEST_TREE_MAX_SIZE = 1000;
+
   @RepeatedTest(100)
   void insertingKeysShouldCreateAValidBSTWithKeysInOrderAndParentsSetCorrectly() {
     List<Integer> keysOrdered = createOrderedSequenceOfKeys();
@@ -24,8 +27,7 @@ abstract class BinarySearchTreeTest {
 
     assertThatTree(tree) //
         .isValid()
-        .hasKeysInGivenOrder(keysOrdered)
-        .hasAllParentsSetCorrectly();
+        .hasKeysInGivenOrder(keysOrdered);
   }
 
   @RepeatedTest(100)
@@ -81,8 +83,7 @@ abstract class BinarySearchTreeTest {
 
       assertThatTree(tree) //
           .isValid()
-          .hasKeysInGivenOrder(keysRemaining)
-          .hasAllParentsSetCorrectly();
+          .hasKeysInGivenOrder(keysRemaining);
     }
   }
 
@@ -98,14 +99,13 @@ abstract class BinarySearchTreeTest {
 
     assertThatTree(tree) //
         .isValid()
-        .hasKeysInGivenOrder(keysOrdered)
-        .hasAllParentsSetCorrectly();
+        .hasKeysInGivenOrder(keysOrdered);
   }
 
   protected abstract BinarySearchTree createBST();
 
   private List<Integer> createOrderedSequenceOfKeys() {
-    int size = ThreadLocalRandom.current().nextInt(1, 1000);
+    int size = ThreadLocalRandom.current().nextInt(TEST_TREE_MIN_SIZE, TEST_TREE_MAX_SIZE);
     return IntStream.range(0, size).boxed().toList();
   }
 
