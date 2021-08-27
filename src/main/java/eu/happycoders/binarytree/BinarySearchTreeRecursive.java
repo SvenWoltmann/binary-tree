@@ -31,7 +31,7 @@ public class BinarySearchTreeRecursive extends BaseBinaryTree implements BinaryS
     root = insertNode(key, root);
   }
 
-  private Node insertNode(int key, Node node) {
+  Node insertNode(int key, Node node) {
     // No node at current position --> store new node at current position
     if (node == null) {
       node = new Node(key);
@@ -54,7 +54,7 @@ public class BinarySearchTreeRecursive extends BaseBinaryTree implements BinaryS
     root = deleteNode(key, root);
   }
 
-  private Node deleteNode(int key, Node node) {
+  Node deleteNode(int key, Node node) {
     // No node at current position --> go up the recursion
     if (node == null) {
       return null;

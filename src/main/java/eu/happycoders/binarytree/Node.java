@@ -15,6 +15,8 @@ public class Node {
   Node right;
   Node parent; // used in SimpleBinaryTree
 
+  int height; // used in AVL tree
+
   /**
    * Constructs a new node with the given data.
    *

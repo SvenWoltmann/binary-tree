@@ -28,6 +28,8 @@ abstract class BinarySearchTreeTest {
     assertThatTree(tree) //
         .isValid()
         .hasKeysInGivenOrder(keysOrdered);
+
+    assertSpecificTreeInvariants(tree);
   }
 
   @RepeatedTest(100)
@@ -84,6 +86,8 @@ abstract class BinarySearchTreeTest {
       assertThatTree(tree) //
           .isValid()
           .hasKeysInGivenOrder(keysRemaining);
+
+      assertSpecificTreeInvariants(tree);
     }
   }
 
@@ -100,7 +104,16 @@ abstract class BinarySearchTreeTest {
     assertThatTree(tree) //
         .isValid()
         .hasKeysInGivenOrder(keysOrdered);
+
+    assertSpecificTreeInvariants(tree);
   }
+
+  /**
+   * Override this in tests for specific trees, e.g. AVL trees or red-black trees.
+   *
+   * @param tree the tree
+   */
+  protected void assertSpecificTreeInvariants(BinarySearchTree tree) {}
 
   protected abstract BinarySearchTree createBST();
 
