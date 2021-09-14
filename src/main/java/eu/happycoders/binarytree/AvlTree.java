@@ -3,7 +3,7 @@ package eu.happycoders.binarytree;
 import static java.lang.Math.max;
 
 /**
- * A recursive binary search tree implementation with <code>int</code> keys.
+ * An AVL tree implementation with <code>int</code> keys.
  *
  * @author <a href="sven@happycoders.eu">Sven Woltmann</a>
  */
