@@ -19,7 +19,7 @@ abstract class BinarySearchTreeTest {
   private static final int TEST_TREE_MAX_SIZE = 1000;
 
   @RepeatedTest(100)
-  void insertingKeysShouldCreateAValidBSTWithKeysInOrderAndParentsSetCorrectly() {
+  void insertingKeysShouldCreateAValidBSTWithKeysInOrder() {
     List<Integer> keysOrdered = createOrderedSequenceOfKeys();
 
     var tree = createBST();
