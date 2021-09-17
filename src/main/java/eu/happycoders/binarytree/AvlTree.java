@@ -99,4 +99,15 @@ public class AvlTree extends BinarySearchTreeRecursive {
   private int height(Node node) {
     return node != null ? node.height : -1;
   }
+
+  @Override
+  protected void appendNodeToString(Node node, StringBuilder builder) {
+    builder
+        .append(node.data)
+        .append("[H=")
+        .append(height(node))
+        .append(", BF=")
+        .append(balanceFactor(node))
+        .append(']');
+  }
 }

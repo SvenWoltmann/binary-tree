@@ -1,5 +1,6 @@
 package eu.happycoders.binarytree.example;
 
+import eu.happycoders.binarytree.AvlTree;
 import eu.happycoders.binarytree.BinarySearchTree;
 import eu.happycoders.binarytree.BinarySearchTreeIterative;
 import eu.happycoders.binarytree.BinarySearchTreeRecursive;
@@ -25,6 +26,7 @@ public class Example3 {
   public static void main(String[] args) {
     runDemoWith(new BinarySearchTreeRecursive());
     runDemoWith(new BinarySearchTreeIterative());
+    runDemoWith(new AvlTree());
   }
 
   private static void runDemoWith(BinarySearchTree tree) {
@@ -35,6 +37,8 @@ public class Example3 {
       System.out.println("Adding key " + key);
       tree.insertNode(key);
     }
+
+    System.out.println("\nTree: " + tree);
 
     System.out.print("\nAll keys in-order: ");
     new DepthFirstTraversalRecursive(tree).traverseInOrder(VISITOR);
