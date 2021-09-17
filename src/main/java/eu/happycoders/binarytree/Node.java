@@ -13,9 +13,10 @@ public class Node {
 
   Node left;
   Node right;
-  Node parent; // used in SimpleBinaryTree
+  Node parent; // used in SimpleBinaryTree + red-black tree
 
   int height; // used in AVL tree
+  boolean color; // used in red-black tree
 
   /**
    * Constructs a new node with the given data.
