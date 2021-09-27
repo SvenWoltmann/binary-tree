@@ -25,7 +25,7 @@
     <spotbugs.version>4.4.1</spotbugs.version>
     <findsecbugs.version>1.11.0</findsecbugs.version>
     <pmd-plugin.version>3.15.0</pmd-plugin.version>
-    <pmd.version>6.38.0</pmd.version>
+    <pmd.version>6.39.0</pmd.version>
     <checkstyle-plugin.version>3.1.2</checkstyle-plugin.version>
     <checkstyle.version>9.0</checkstyle.version>
 
