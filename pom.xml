@@ -10,8 +10,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.target>16</maven.compiler.target>
-    <maven.compiler.source>16</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
 
     <!-- Versions -->
     <junit.version>5.8.1</junit.version>
@@ -163,7 +163,7 @@
             <artifactId>maven-pmd-plugin</artifactId>
             <version>${pmd-plugin.version}</version>
             <configuration>
-              <targetJdk>16</targetJdk>
+              <targetJdk>17</targetJdk>
               <rulesets>
                 <ruleset>ruleset.xml</ruleset>
               </rulesets>
