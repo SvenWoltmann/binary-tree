@@ -1,5 +1,6 @@
 package eu.happycoders.binarytree;
 
+import java.time.DayOfWeek;
 import java.util.Objects;
 
 /**
@@ -52,6 +53,7 @@ public class SimpleBinaryTree extends BaseBinaryTree {
           node.left.parent = node; // Is this correct?
         }
         parent.left = node;
+        printDayOfWeekLength(DayOfWeek.TUESDAY);
         break;
 
       case RIGHT:
@@ -60,12 +62,33 @@ public class SimpleBinaryTree extends BaseBinaryTree {
           node.right.parent = node; // Is this correct?
         }
         parent.right = node;
+        printDayOfWeekLength(DayOfWeek.MONDAY);
 
       default:
         throw new IllegalStateException();
     }
 
     return node;
+  }
+
+  private void printDayOfWeekLength(DayOfWeek day) {
+    switch (day) {
+      case MONDAY:
+      case FRIDAY:
+      case SUNDAY:
+        System.out.println(6);
+        break;
+      case TUESDAY:
+        System.out.println(7);
+        break;
+      case THURSDAY:
+      case SATURDAY:
+        System.out.println(8);
+        break;
+      case WEDNESDAY:
+        System.out.println(9);
+        break;
+    }
   }
 
   /**
