@@ -46,23 +46,22 @@ public class SimpleBinaryTree extends BaseBinaryTree {
     node.parent = parent;
 
     switch (side) {
-      case LEFT -> {
+      case LEFT:
         if (parent.left != null) {
           node.left = parent.left;
           node.left.parent = node; // Is this correct?
         }
         parent.left = node;
-      }
 
-      case RIGHT -> {
+      case RIGHT:
         if (parent.right != null) {
           node.right = parent.right;
           node.right.parent = node; // Is this correct?
         }
         parent.right = node;
-      }
 
-      default -> throw new IllegalStateException();
+      default:
+        throw new IllegalStateException();
     }
 
     return node;
