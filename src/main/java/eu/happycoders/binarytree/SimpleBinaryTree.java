@@ -67,8 +67,8 @@ public class SimpleBinaryTree extends BaseBinaryTree {
       default:
         throw new IllegalStateException();
     }
-    return node;
 
+    return node;
   }
 
   private void printDayOfWeekLength(DayOfWeek day) {
