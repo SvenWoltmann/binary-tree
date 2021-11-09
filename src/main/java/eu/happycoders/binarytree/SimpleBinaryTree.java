@@ -67,8 +67,8 @@ public class SimpleBinaryTree extends BaseBinaryTree {
       default:
         throw new IllegalStateException();
     }
-
     return node;
+
   }
 
   private void printDayOfWeekLength(DayOfWeek day) {
@@ -76,19 +76,23 @@ public class SimpleBinaryTree extends BaseBinaryTree {
       case MONDAY:
       case FRIDAY:
       case SUNDAY:
-        System.out.println(6);
+        println(6);
         break;
       case TUESDAY:
-        System.out.println(7);
+        println(7);
         break;
       case THURSDAY:
       case SATURDAY:
-        System.out.println(8);
+        println(8);
         break;
       case WEDNESDAY:
-        System.out.println(9);
+        println(9);
         break;
     }
+  }
+
+  private void println(int i) {
+    System.out.println("i = " + i);
   }
 
   /**
