@@ -52,6 +52,7 @@ public class SimpleBinaryTree extends BaseBinaryTree {
           node.left.parent = node; // Is this correct?
         }
         parent.left = node;
+        break;
 
       case RIGHT:
         if (parent.right != null) {
