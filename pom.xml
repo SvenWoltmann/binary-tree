@@ -21,7 +21,7 @@
     <surefire-plugin.version>3.0.0-M6</surefire-plugin.version>
     <spotless.version>2.22.0</spotless.version>
     <google-java-format.version>1.10.0</google-java-format.version>
-    <jacoco.version>0.8.7</jacoco.version>
+    <jacoco.version>0.8.8</jacoco.version>
     <spotbugs.version>4.6.0.0</spotbugs.version>
     <findsecbugs.version>1.11.0</findsecbugs.version>
     <pmd-plugin.version>3.16.0</pmd-plugin.version>
