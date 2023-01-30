@@ -27,7 +27,7 @@
     <pmd-plugin.version>3.19.0</pmd-plugin.version>
     <pmd.version>6.54.0</pmd.version>
     <checkstyle-plugin.version>3.2.1</checkstyle-plugin.version>
-    <checkstyle.version>10.5.0</checkstyle.version>
+    <checkstyle.version>10.6.0</checkstyle.version>
 
     <!-- SonarCloud setup -->
     <sonar.projectKey>SvenWoltmann_binary-tree</sonar.projectKey>
