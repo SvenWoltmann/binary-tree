@@ -24,7 +24,7 @@
     <jacoco.version>0.8.12</jacoco.version>
     <spotbugs.version>4.8.6.5</spotbugs.version>
     <findsecbugs.version>1.13.0</findsecbugs.version>
-    <pmd-plugin.version>3.25.0</pmd-plugin.version>
+    <pmd-plugin.version>3.26.0</pmd-plugin.version>
     <pmd.version>7.7.0</pmd.version>
     <checkstyle-plugin.version>3.6.0</checkstyle-plugin.version>
     <checkstyle.version>10.19.0</checkstyle.version>
