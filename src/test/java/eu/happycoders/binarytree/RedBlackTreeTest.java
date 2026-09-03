@@ -17,10 +17,8 @@ class RedBlackTreeTest extends BinarySearchTreeTest {
 
     Node root = tree.getRoot();
     if (root != null) {
-      // Check rule 2?
-      // if (root.color == RED) {
-      //   throw new AssertionError("Root is red");
-      // }
+      // Rule 2 (the root is black) is deliberately not checked: this implementation
+      // takes the simplified approach of not forcing the root to be black.
       validateRedBlackInvariant(null, root, 0, new MutableValueContainer());
     }
   }

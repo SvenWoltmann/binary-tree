@@ -124,7 +124,7 @@ class SimpleBinaryTreeTest {
   void deleteNode_nonRootNodeWithoutParent_throwsException() {
     SimpleBinaryTree tree = new SimpleBinaryTree();
     Node root = tree.insertRoot(3);
-    Node node1 = tree.insertNode(1, root, Side.LEFT);
+    tree.insertNode(1, root, Side.LEFT);
     Node node10 = tree.insertNode(10, root, Side.RIGHT);
     node10.parent = null;
 
@@ -138,8 +138,8 @@ class SimpleBinaryTreeTest {
     Node node1 = tree.insertNode(1, root, Side.LEFT);
     Node node10 = tree.insertNode(10, root, Side.RIGHT);
     Node node8 = tree.insertNode(8, node10, Side.LEFT);
-    Node node7 = tree.insertNode(7, node8, Side.LEFT);
-    Node node9 = tree.insertNode(9, node8, Side.RIGHT);
+    tree.insertNode(7, node8, Side.LEFT);
+    tree.insertNode(9, node8, Side.RIGHT);
 
     tree.deleteNode(node10);
 
@@ -155,8 +155,8 @@ class SimpleBinaryTreeTest {
     Node node1 = tree.insertNode(1, root, Side.LEFT);
     Node node10 = tree.insertNode(10, root, Side.RIGHT);
     Node node12 = tree.insertNode(12, node10, Side.RIGHT);
-    Node node11 = tree.insertNode(11, node12, Side.LEFT);
-    Node node13 = tree.insertNode(13, node12, Side.RIGHT);
+    tree.insertNode(11, node12, Side.LEFT);
+    tree.insertNode(13, node12, Side.RIGHT);
 
     tree.deleteNode(node10);
 
@@ -175,13 +175,13 @@ class SimpleBinaryTreeTest {
 
     // left subtree of 10
     Node node8 = tree.insertNode(8, node10, Side.LEFT);
-    Node node7 = tree.insertNode(7, node8, Side.LEFT);
+    tree.insertNode(7, node8, Side.LEFT);
     Node node9 = tree.insertNode(9, node8, Side.RIGHT);
 
     // right subtree of 10
     Node node12 = tree.insertNode(12, node10, Side.RIGHT);
-    Node node11 = tree.insertNode(11, node12, Side.LEFT);
-    Node node13 = tree.insertNode(13, node12, Side.RIGHT);
+    tree.insertNode(11, node12, Side.LEFT);
+    tree.insertNode(13, node12, Side.RIGHT);
 
     tree.deleteNode(node10);
 
@@ -203,13 +203,13 @@ class SimpleBinaryTreeTest {
 
     // left subtree of 10
     Node node8 = tree.insertNode(8, node10, Side.LEFT);
-    Node node7 = tree.insertNode(7, node8, Side.LEFT);
+    tree.insertNode(7, node8, Side.LEFT);
     Node node9 = tree.insertNode(9, node8, Side.RIGHT);
 
     // right subtree of 10
     Node node12 = tree.insertNode(12, node10, Side.RIGHT);
-    Node node11 = tree.insertNode(11, node12, Side.LEFT);
-    Node node13 = tree.insertNode(13, node12, Side.RIGHT);
+    tree.insertNode(11, node12, Side.LEFT);
+    tree.insertNode(13, node12, Side.RIGHT);
 
     tree.deleteNode(node10);
 
