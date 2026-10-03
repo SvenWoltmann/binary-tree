@@ -338,7 +338,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
     } else if (node == parent.right) {
       return parent.left;
     } else {
-      throw new IllegalStateException("Parent is not a child of its grandparent");
+      throw new IllegalStateException("Node is not a child of its parent");
     }
   }
 
