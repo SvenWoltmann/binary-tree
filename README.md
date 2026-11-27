@@ -25,6 +25,20 @@ Source code for the HappyCoders.eu article series on binary trees:
 * [Rot-Schwarz-Baum (vollständig erklärt, mit Java-Code)](https://www.happycoders.eu/de/algorithmen/rot-schwarz-baum-java/)
 
 
+## <br>Heap Benchmarks
+
+Measurements for the upcoming heap article in `eu.happycoders.binarytree.heap.benchmark`, results (JDK 27, Apple M5 Pro) in `results/heap/`:
+
+* `HeapConstructionCount` – comparisons and swaps of Floyd's method against inserting one by one, for 1,000 to 1,000,000 elements in random, ascending and descending order (not JMH; exact counts, the same on every machine)
+* `PriorityQueueBuildBenchmark` (JMH) – `new PriorityQueue<>(list)` against `addAll()`, with and without a presized queue
+
+```
+mvn package
+java -cp target/benchmarks.jar eu.happycoders.binarytree.heap.benchmark.HeapConstructionCount
+java -jar target/benchmarks.jar "heap.benchmark.PriorityQueueBuildBenchmark" -rf json -rff results/heap/apple-m5-pro/jmh-jdk27-priorityqueue-build.json
+```
+
+
 <!-- happycoders-resources:start -->
 <!-- Generated from happycoders-website-astro/data/github-readme by scripts/content/sync-github-readmes.mjs. Edit there, not here. -->
 
