@@ -31,11 +31,18 @@ Measurements for the upcoming heap article in `eu.happycoders.binarytree.heap.be
 
 * `HeapConstructionCount` – comparisons and swaps of Floyd's method against inserting one by one, for 1,000 to 1,000,000 elements in random, ascending and descending order (not JMH; exact counts, the same on every machine)
 * `PriorityQueueBuildBenchmark` (JMH) – `new PriorityQueue<>(list)` against `addAll()`, with and without a presized queue
+* `HeapBuildLocalityBenchmark` (JMH) – Floyd's method on an `int[]` (with and without a branch for choosing the smaller child) and the `PriorityQueue` constructor on `Integer` objects allocated in ascending order or in list order: why shuffled input takes longer than descending input
+* `DaryHeapCount` – comparisons and moved elements of a d-ary heap (`IntDaryHeap`) for d = 2, 3, 4 and 8, inserting and removing (not JMH)
+* `DaryHeapBenchmark` (JMH) – binary against 4-ary and 8-ary heap, inserting and removing
 
 ```
 mvn package
 java -cp target/benchmarks.jar eu.happycoders.binarytree.heap.benchmark.HeapConstructionCount
+java -cp target/benchmarks.jar eu.happycoders.binarytree.heap.benchmark.DaryHeapCount
 java -jar target/benchmarks.jar "heap.benchmark.PriorityQueueBuildBenchmark" -rf json -rff results/heap/apple-m5-pro/jmh-jdk27-priorityqueue-build.json
+java -jar target/benchmarks.jar "heap.benchmark.HeapBuildLocalityBenchmark.(intArray|integers.*)$" -rf json -rff results/heap/apple-m5-pro/jmh-jdk27-heap-build-locality.json
+java -jar target/benchmarks.jar "heap.benchmark.HeapBuildLocalityBenchmark.intArrayBranchlessChild" -rf json -rff results/heap/apple-m5-pro/jmh-jdk27-heap-build-branchless.json
+java -jar target/benchmarks.jar "heap.benchmark.DaryHeapBenchmark" -rf json -rff results/heap/apple-m5-pro/jmh-jdk27-dary-heap.json
 ```
 
 
